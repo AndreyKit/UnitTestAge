@@ -22,10 +22,10 @@ class Arr
 
     public function mulArrNum(array $arr, int $n): array
     {
-        $arr1 = [];
-        foreach ($arr as $value){
-           $arr1[]  = $value * $n;
+//        $arr1 = [];
+        foreach ($arr as $k=>$value){
+           $arr[$k] = $value * $n;
         }
-        return  $arr1;
+        return  $arr;
     }
 }
