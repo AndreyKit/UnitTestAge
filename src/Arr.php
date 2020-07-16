@@ -22,9 +22,8 @@ class Arr
 
     public function mulArrNum(array $arr, int $n): array
     {
-//        $arr1 = [];
-        foreach ($arr as $k=>$value){
-           $arr[$k] = $value * $n;
+        foreach ($arr as &$value){
+            $value=$value * $n;
         }
         return  $arr;
     }
