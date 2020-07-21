@@ -7,34 +7,43 @@ use App\Age;
 
 class AgeTest extends TestCase
 {
-    public function testOld()
+    public function testCheck()
     {
         $age = new Age();
 
         $this->assertEquals(
             5,
-            $age->old(1825)
+            $age->daysToYears(5 * 365)
         );
-        $this->assertIsFloat($age->old(1588));
+
+        $this->assertIsFloat(
+            $age->daysToYears(1588)
+        );
+
     }
-    public function testOld2()
+
+    public function testOld()
     {
         $age = new Age();
-       
+
 
         $this->expectException('Exception');
-        $this->expectExceptionCode(000);
-        $this->expectExceptionMessage('Вы очень старый!');
-        $age->old(36500);
+        $this->expectExceptionCode(1);
+        $this->expectExceptionMessage('Too old!');
+
+        $age->daysToYears(200 * 365);
     }
+
 
     public function testYoung()
     {
         $age = new Age();
 
         $this->expectException('Exception');
-        $this->expectExceptionCode(777);
-        $this->expectExceptionMessage('Так не бывает!');
-        $age->young(-1);
+        $this->expectExceptionCode(2);
+        $this->expectExceptionMessage('Imposable!');
+
+
+        $age->daysToYears(-1000);
     }
 }
