@@ -15,11 +15,12 @@ class AgeTest extends TestCase
             5,
             $age->old(1825)
         );
+        $this->assertIsFloat($age->old(1588));
     }
     public function testOld2()
     {
         $age = new Age();
-        $this->assertIsFloat($age->old(1588));
+       
 
         $this->expectException('Exception');
         $this->expectExceptionCode(000);
