@@ -17,7 +17,7 @@ class AgeTest extends TestCase
         );
         $this->assertIsFloat($age->old(1588));
     }
-    public function testOld2()
+    public function testCorrectness()
     {
         $age = new Age();
        
