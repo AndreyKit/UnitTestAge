@@ -17,9 +17,21 @@ class AgeTest extends TestCase
         );
 
         $this->assertIsFloat($age->old(1588));
+
         $this->expectException('Exception');
         $this->expectExceptionCode(000);
         $this->expectExceptionMessage('Вы очень старый!');
         $age->old(36500);
+        
+        
+    }
+
+    public function testYoung(){
+        $age = new Age();
+
+        $this->expectException('Exception');
+        $this->expectExceptionCode(777);
+        $this->expectExceptionMessage('Так не бывает!');
+        $age->young(-1);
     }
 }

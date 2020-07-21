@@ -24,4 +24,12 @@ class Age
             throw new Exception('Вы очень старый!', 000);
         }
     }
+
+    public function young($day)
+    {
+        if ($day / 365 < 0) {
+            throw new Exception('Так не бывает!', 777);
+        }
+        return $day / 365;
+    }
 }
