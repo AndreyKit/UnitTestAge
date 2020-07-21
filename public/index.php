@@ -1,11 +1,10 @@
 <?php
 include "../vendor/autoload.php";
 
-use App\Arr;
+use App\Age;
 
-$arr = new Arr();
+$age = new Age();
 
-echo $arr->sumArr([1,2,3]);
-echo $arr->mulArr([2,3]);
+echo $age->old(316500);
 
-print_r($arr->mulArrNum([3,10,9],2));
+
